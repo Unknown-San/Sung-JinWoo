@@ -182,19 +182,19 @@ def get_user_info(chat: Chat, user: User) -> str:
             if result.custom_title:
                 text += f"\n\nThis user holds the title <b>{result.custom_title}</b> here."
     if user.id == OWNER_ID:        
-        text += "\n\n<code>Our Cute Neko Arsh</code> :3"
+        text += "\n\n<code>This User is the Shadow Monarch"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\n<code>This user is a part of our family</code> 🌻"
+        text += "\n\n<code>This user is a part of our Guild</code>"
         disaster_level_present = True
     elif user.id in SUDO_USERS:
         text += "\n\n<code>One of A-Rank Hunters, touch him and you are dead meat</code>"
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
-        text += "\n\n<code>This user is our friend</code> ✨"
+        text += "\n\n<code>This user is our Ally</code> "
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\n<code>One of my classmates</code> :p"
+        text += "\n\n<code>One of my Guild</code> :p"
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
         text += "\n\n<code>Member of SungJinWoo Tech, totally cool right?</code>"
@@ -278,7 +278,7 @@ stats_str = '''
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     botuptime = get_readable_time((time.time() - StartTime))
-    status = "*╒═══「 System statistics: 」*\n\n"
+    status = "*╒═══「 Sung-Jin Woo statistics: 」*\n\n"
     status += f"*• System Start time:* {str(uptime)}" + "\n"
     uname = platform.uname()
     status += f"*• System:* {str(uname.system)}" + "\n"
@@ -301,7 +301,7 @@ def stats(update, context):
             "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS]) +
             "\n\n[⍙ GitHub](https://github.com/RimuruDemonlord/SungJinWoo) | [Telegram](https://t.me/SungJinWoo_Robot)\n\n" +
-            "╘══「 by [Kaizuryu](t.me/Kaizuryu) 」\n",
+            "╘══「 by [Aogiri](t.me/AogiriNetwork) 」\n",
         parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     except BaseException:
         update.effective_message.reply_text(
@@ -313,7 +313,7 @@ def stats(update, context):
                     )
                     + "\n\n⍙ [GitHub](https://github.com/RimuruDemonlord/SungJinWoo) | [Telegram](https://t.me/SungJinWoo_Robot)\n\n"
                 )
-                + "╘══「 by [Kaizuryu](t.me/Kaizuryu) 」\n"
+                + "╘══「 by [Kaizuryu](t.me/AogiriNetwork) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,         
             disable_web_page_preview=True,

@@ -3,7 +3,7 @@
 from telethon import events, Button, custom
 from SungJinWoo.events import register
 from SungJinWoo import telethn as tbot
-SungJinWoo = "https://telegra.ph/file/9dfcdab5244a61b323210.jpg"
+SungJinWoo = "https://telegra.ph/file/bb2ac197bafa9619450b1.jpg"
 @register(pattern=("/alive"))
 async def awake(event):
   STB = event.sender.first_name
