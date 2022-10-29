@@ -269,10 +269,7 @@ db = motor[MONGO_DB]
 engine = AIOEngine(motor, MONGO_DB)
 print("[INFO]: INITIALZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
-# ARQ Client
-print("[INFO]: INITIALIZING ARQ CLIENT")
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-print("[SungJin]: Connecting To Kaizuryu HQ • PostgreSQL Database")
+
 #ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 print("[SungJin]: Connecting To Kaizuryu (t.me/Kaizuryu)")
 timeout = httpx.Timeout(40)
