@@ -78,8 +78,8 @@ if ENV:
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)  # G-Ban Logs (Channel) (-100)
     ERROR_LOGS = os.environ.get("ERROR_LOGS", None)  # Error Logs (Channel Ya Group Choice Is Yours) (-100)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
-    ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://thearq.tech/")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "LKQJTW-UWBYRL-UTDTTT-YTGLIV-ARQ")
     #URL="https://meow.herokuapp.com"
     PORT = int(os.environ.get("PORT", 8443)) 
     CERT_PATH = os.environ.get("CERT_PATH")
@@ -269,7 +269,10 @@ db = motor[MONGO_DB]
 engine = AIOEngine(motor, MONGO_DB)
 print("[INFO]: INITIALZING AIOHTTP SESSION")
 aiohttpsession = ClientSession()
-
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+print("[SungJin]: Connecting To Kaizuryu HQ • PostgreSQL Database")
 #ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 print("[SungJin]: Connecting To Kaizuryu (t.me/Kaizuryu)")
 timeout = httpx.Timeout(40)
